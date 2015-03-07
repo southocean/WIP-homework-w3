@@ -3,6 +3,10 @@ begin
   load File.expand_path("../spring", __FILE__)
 rescue LoadError
 end
+<<<<<<< HEAD
 APP_PATH = File.expand_path('../../config/application', __FILE__)
+=======
+APP_PATH = File.expand_path('../../config/application',  __FILE__)
+>>>>>>> a2947879af714a4171206806b8244b68d38a056b
 require_relative '../config/boot'
 require 'rails/commands'
