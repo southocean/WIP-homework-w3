@@ -2,11 +2,7 @@
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-<<<<<<< HEAD
 // or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-=======
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
->>>>>>> a2947879af714a4171206806b8244b68d38a056b
 //
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.

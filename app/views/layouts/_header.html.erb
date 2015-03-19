@@ -1,33 +1,30 @@
-<<<<<<< HEAD
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed top navbar-inverse">
 	<div class="container">
-		<table>
-			<tr>
-				<td><%= link_to "sample app", '#', id: "logo"%></td>
-				<td>	
-					<nav>
-						<ul class="nav navbar-nav pull-right">
-							<li><%= link_to "Home", '#'%></li>
-							<li><%= link_to "Help", '#'%></li>
-							<li><%= link_to "Log in", '#'%></li>
-						</ul>
-					</nav>
-				</td>
-		</tr>
-		</table>
-=======
-<header class="navbar-fixed-top navbar-inverse">
-	<div class="container">
-		<div class="col-sm-6">
-        <h1><%= link_to "sample app", '#', id: "logo" %>
-      	</div>
+		<%= link_to "sample app", root_url, id: "logo" %>
 		<nav>
-			<ul class="nav nav-pills pull-left" role="tablist">
-				<li><%= link_to "Home", '#' %></li>
-				<li><%= link_to "Help", '#' %></li>
-				<li><%= link_to "Log in", '#' %></li>
+			<ul class="nav navbar-nav pull-right">
+				<li><%= link_to "Home", root_url %></li>
+				<li><%= link_to "Help", help_url %></li>
+				
+				<% if logged_in? %>
+					<li><%= link_to "Users", '#' %></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">	
+							Account <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li role="presentation"><%= link_to "Profile", current_user %></li>
+							<li role="presentation"><%= link_to "Settings", '#' %></li>
+							<li class="divider"></li>
+							<li>
+								<%= link_to "Log out", logout_path, method: "delete" %>
+							</li>
+						</ul>
+					</li>
+				<% else %>
+					<li><%= link_to "Log in", login_path %></li>
+				<% end %>	
 			</ul>
 		</nav>
->>>>>>> a2947879af714a4171206806b8244b68d38a056b
 	</div>
 </header>

@@ -1,33 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
   <title><%= full_title(yield(:title)) %></title>
-=======
-  <title><%= full_title(yield(:title))%></title>
->>>>>>> a2947879af714a4171206806b8244b68d38a056b
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
 </head>
 <body>
-<<<<<<< HEAD
-	<%= render :partial => 'layouts/header' %>
-	<div class="container">
-<br>
-<br>
-<br>
-		<%= yield %>
-	</div>
-<br>
-		<%= render 'layouts/footer' %>
-=======
 	<%= render 'layouts/header' %>
-	<div>
+	<div class="container">
+		<% flash.each do |message_type, message| %>
+			<div class="alert alert-<%= message_type %>"><%= message %></div>
+		<% end %>
+		
 		<%= yield %>
+		<%= render 'layouts/footer' %>
 	</div>
 
->>>>>>> a2947879af714a4171206806b8244b68d38a056b
 </body>
 </html>

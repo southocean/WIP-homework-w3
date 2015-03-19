@@ -28,10 +28,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      log_in @user
+    	flash[:success] = "Welcome to the Sample App!"
+    	redirect_to @user
+      #format.json { render :show, status: :created, location: @user }
     else
-      render :new 
+      format.html { render :new }
+      format.json { render json: @user.errors, status: :unprocessable_entity }
     end
   end
 
