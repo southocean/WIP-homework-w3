@@ -10,8 +10,7 @@ class User < ActiveRecord::Base
 						uniqueness: {case_sensitive: false}
 
 	has_secure_password
-
-	validates :password, length: {minimum: 6}
+	validates :password, length: {minimum: 6}, allow_blank: true
 
 
 	def User.digest(string)
@@ -32,7 +31,7 @@ class User < ActiveRecord::Base
 	end
 
 	def User.new_token
-		SecurePassword.urlsafe_base64
+		SecureRandom.urlsafe_base64
 	end
 
 	def authenticate?(remember_token)
